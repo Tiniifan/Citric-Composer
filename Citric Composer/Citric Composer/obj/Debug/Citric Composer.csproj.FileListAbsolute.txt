@@ -1,0 +1,47 @@
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.csproj.AssemblyReference.cache
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.AboutWindow.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.EditorBase.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.GoldiAbout.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.BrewsterAbout.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.IsabelleAbout.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.IsabelleSoundEditor.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.MainWindowOLD.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.Rolf_Rescource_Researcher.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.RolfAbout.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.SaveCloseDialog.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.SaveQuitDialog.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.Properties.Resources.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.FileWizard.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.SoundEditor.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.Sound3dEditor.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric_Composer.VersionSelector.resources
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.csproj.GenerateResource.cache
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.csproj.CoreCompileInputs.cache
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.exe.config
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\caesar.exe
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Data\Image\pause.png
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Data\Image\play4.png
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\version.bin
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Citric Composer.exe.config
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Citric Composer.exe
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Citric Composer.pdb
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\SequenceDataLib.exe.config
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\CSCore.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\NAudio.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\ScintillaNET.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Syroot.BinaryData.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\Syroot.KnownFolders.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Buffers.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Memory.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Memory.Data.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Text.Json.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\System.ValueTuple.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\bin\Debug\VGAudio.xml
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.csproj.CopyComplete
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.exe
+C:\Users\Mathieu\source\repos\Citric-Composer-master\Citric-Composer-master\Citric Composer\Citric Composer\obj\Debug\Citric Composer.pdb

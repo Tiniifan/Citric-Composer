@@ -119,7 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SolarFileLoader\SolarFileLoader\SolarFileLoader.csproj">
+    <ProjectReference Include="..\SolarFileLoader\SolarFileLoader.csproj">
       <Project>{4061C68E-CD19-494A-ACAE-4B645EF7F774}</Project>
       <Name>SolarFileLoader</Name>
     </ProjectReference>

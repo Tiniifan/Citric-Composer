@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IsabelleSoundEditor));
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Project Info");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Channels", 1, 1);
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Tracks", 3, 3);
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Regions", 5, 5);
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Project Info");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Channels", 1, 1);
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Tracks", 3, 3);
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Regions", 5, 5);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -268,7 +268,7 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -277,7 +277,7 @@
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -286,7 +286,7 @@
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -296,7 +296,7 @@
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -305,7 +305,7 @@
             this.exportBinaryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportBinaryToolStripMenuItem.Image")));
             this.exportBinaryToolStripMenuItem.Name = "exportBinaryToolStripMenuItem";
             this.exportBinaryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exportBinaryToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.exportBinaryToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.exportBinaryToolStripMenuItem.Text = "Export Binary";
             this.exportBinaryToolStripMenuItem.Click += new System.EventHandler(this.exportBinaryToolStripMenuItem_Click);
             // 
@@ -315,7 +315,7 @@
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.closeToolStripMenuItem.Text = "Close File";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -325,7 +325,7 @@
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -344,7 +344,7 @@
             this.importFileToolStripMenuItem.Name = "importFileToolStripMenuItem";
             this.importFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
-            this.importFileToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.importFileToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.importFileToolStripMenuItem.Text = "Import File";
             this.importFileToolStripMenuItem.Click += new System.EventHandler(this.importFileToolStripMenuItem_Click);
             // 
@@ -354,7 +354,7 @@
             this.exportWavToolStripMenuItem.Name = "exportWavToolStripMenuItem";
             this.exportWavToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.E)));
-            this.exportWavToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.exportWavToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.exportWavToolStripMenuItem.Text = "Export Wav";
             this.exportWavToolStripMenuItem.Click += new System.EventHandler(this.exportWavToolStripMenuItem_Click);
             // 
@@ -365,7 +365,7 @@
             this.gameFileToGameFileToolStripMenuItem,
             this.streamToPrefetchToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // simpleGameFileToWaveToolStripMenuItem
@@ -1621,7 +1621,7 @@
             this.playLikeGameBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.playLikeGameBox.Checked = true;
             this.playLikeGameBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.playLikeGameBox.Location = new System.Drawing.Point(533, 76);
+            this.playLikeGameBox.Location = new System.Drawing.Point(535, 76);
             this.playLikeGameBox.Name = "playLikeGameBox";
             this.playLikeGameBox.Size = new System.Drawing.Size(80, 27);
             this.playLikeGameBox.TabIndex = 17;
@@ -1632,7 +1632,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(532, 60);
+            this.label4.Location = new System.Drawing.Point(534, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 16;
@@ -1643,7 +1643,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(548, 8);
+            this.label3.Location = new System.Drawing.Point(550, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 15;
@@ -1654,7 +1654,7 @@
             this.volume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.volume.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.volume.LargeChange = 2;
-            this.volume.Location = new System.Drawing.Point(522, 27);
+            this.volume.Location = new System.Drawing.Point(524, 27);
             this.volume.Maximum = 100;
             this.volume.Name = "volume";
             this.volume.Size = new System.Drawing.Size(100, 45);
@@ -1670,25 +1670,25 @@
             this.tree.Indent = 12;
             this.tree.Location = new System.Drawing.Point(0, 0);
             this.tree.Name = "tree";
-            treeNode5.Name = "soundInfo";
-            treeNode5.Text = "Project Info";
-            treeNode6.ImageIndex = 1;
-            treeNode6.Name = "channels";
-            treeNode6.SelectedImageIndex = 1;
-            treeNode6.Text = "Channels";
-            treeNode7.ImageIndex = 3;
-            treeNode7.Name = "tracks";
-            treeNode7.SelectedImageIndex = 3;
-            treeNode7.Text = "Tracks";
-            treeNode8.ImageIndex = 5;
-            treeNode8.Name = "regions";
-            treeNode8.SelectedImageIndex = 5;
-            treeNode8.Text = "Regions";
+            treeNode1.Name = "soundInfo";
+            treeNode1.Text = "Project Info";
+            treeNode2.ImageIndex = 1;
+            treeNode2.Name = "channels";
+            treeNode2.SelectedImageIndex = 1;
+            treeNode2.Text = "Channels";
+            treeNode3.ImageIndex = 3;
+            treeNode3.Name = "tracks";
+            treeNode3.SelectedImageIndex = 3;
+            treeNode3.Text = "Tracks";
+            treeNode4.ImageIndex = 5;
+            treeNode4.Name = "regions";
+            treeNode4.SelectedImageIndex = 5;
+            treeNode4.Text = "Regions";
             this.tree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.tree.SelectedImageIndex = 0;
             this.tree.ShowLines = false;
             this.tree.Size = new System.Drawing.Size(627, 463);

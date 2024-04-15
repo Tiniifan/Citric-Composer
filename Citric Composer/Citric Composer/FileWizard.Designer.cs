@@ -28,22 +28,22 @@
             this.useExistingFile = new System.Windows.Forms.RadioButton();
             this.newFile = new System.Windows.Forms.RadioButton();
             this.existingFiles = new System.Windows.Forms.ComboBox();
-            this.newFilePath = new System.Windows.Forms.TextBox();
             this.browse = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.referenceFileExternally = new System.Windows.Forms.CheckBox();
             this.nullFile = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.blankFile = new System.Windows.Forms.RadioButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
             // 
             this.okButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.okButton.Location = new System.Drawing.Point(159, 3);
+            this.okButton.Location = new System.Drawing.Point(222, 3);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(150, 24);
+            this.okButton.Size = new System.Drawing.Size(213, 24);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "Ok";
             this.okButton.UseVisualStyleBackColor = true;
@@ -83,21 +83,13 @@
             this.existingFiles.TabIndex = 27;
             this.existingFiles.SelectedIndexChanged += new System.EventHandler(this.ExistingFiles_SelectedIndexChanged);
             // 
-            // newFilePath
-            // 
-            this.newFilePath.Enabled = false;
-            this.newFilePath.Location = new System.Drawing.Point(84, 42);
-            this.newFilePath.Name = "newFilePath";
-            this.newFilePath.Size = new System.Drawing.Size(201, 20);
-            this.newFilePath.TabIndex = 28;
-            // 
             // browse
             // 
-            this.browse.Location = new System.Drawing.Point(291, 39);
+            this.browse.Location = new System.Drawing.Point(120, 39);
             this.browse.Name = "browse";
-            this.browse.Size = new System.Drawing.Size(30, 25);
+            this.browse.Size = new System.Drawing.Size(201, 25);
             this.browse.TabIndex = 29;
-            this.browse.Text = "...";
+            this.browse.Text = "Open";
             this.browse.UseVisualStyleBackColor = true;
             this.browse.Click += new System.EventHandler(this.Browse_Click);
             // 
@@ -107,7 +99,7 @@
             this.cancelButton.Location = new System.Drawing.Point(3, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cancelButton.Size = new System.Drawing.Size(150, 24);
+            this.cancelButton.Size = new System.Drawing.Size(213, 24);
             this.cancelButton.TabIndex = 30;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -147,7 +139,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(312, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(438, 30);
             this.tableLayoutPanel1.TabIndex = 34;
             // 
             // blankFile
@@ -162,17 +154,26 @@
             this.blankFile.UseVisualStyleBackColor = true;
             this.blankFile.CheckedChanged += new System.EventHandler(this.BlankFile_CheckedChanged);
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(327, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 108);
+            this.listBox1.TabIndex = 36;
+            // 
             // FileWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 164);
+            this.ClientSize = new System.Drawing.Size(456, 164);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.blankFile);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.nullFile);
             this.Controls.Add(this.referenceFileExternally);
             this.Controls.Add(this.browse);
-            this.Controls.Add(this.newFilePath);
             this.Controls.Add(this.existingFiles);
             this.Controls.Add(this.newFile);
             this.Controls.Add(this.useExistingFile);
@@ -195,12 +196,12 @@
         private System.Windows.Forms.RadioButton useExistingFile;
         private System.Windows.Forms.RadioButton newFile;
         private System.Windows.Forms.ComboBox existingFiles;
-        private System.Windows.Forms.TextBox newFilePath;
         private System.Windows.Forms.Button browse;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.CheckBox referenceFileExternally;
         private System.Windows.Forms.RadioButton nullFile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.RadioButton blankFile;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

@@ -25,23 +25,23 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sound3dEditor));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.unknownFlag = new System.Windows.Forms.CheckBox();
+            this.dopplerFactor = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.volume = new System.Windows.Forms.CheckBox();
             this.priority = new System.Windows.Forms.CheckBox();
             this.pan = new System.Windows.Forms.CheckBox();
             this.surroundPan = new System.Windows.Forms.CheckBox();
             this.filter = new System.Windows.Forms.CheckBox();
             this.attenuationRate = new System.Windows.Forms.NumericUpDown();
-            this.dopplerFactor = new System.Windows.Forms.NumericUpDown();
             this.attenuationCurve = new System.Windows.Forms.ComboBox();
-            this.unknownFlag = new System.Windows.Forms.CheckBox();
             this.okButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.attenuationRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dopplerFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attenuationRate)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,25 +77,38 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(236, 186);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // label1
+            // unknownFlag
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "3d Flags:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.unknownFlag.AutoSize = true;
+            this.unknownFlag.Location = new System.Drawing.Point(3, 159);
+            this.unknownFlag.Name = "unknownFlag";
+            this.unknownFlag.Size = new System.Drawing.Size(72, 17);
+            this.unknownFlag.TabIndex = 12;
+            this.unknownFlag.Text = "Unknown";
+            this.unknownFlag.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // dopplerFactor
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(121, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Attenuation Rate:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dopplerFactor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dopplerFactor.Location = new System.Drawing.Point(121, 133);
+            this.dopplerFactor.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.dopplerFactor.Name = "dopplerFactor";
+            this.dopplerFactor.Size = new System.Drawing.Size(112, 20);
+            this.dopplerFactor.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(121, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Doppler Factor:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -107,15 +120,25 @@
             this.label3.Text = "Attenuation Curve:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // label2
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(121, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 26);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Doppler Factor:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(121, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 26);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Attenuation Rate:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "3d Flags:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // volume
             // 
@@ -186,19 +209,6 @@
             0,
             65536});
             // 
-            // dopplerFactor
-            // 
-            this.dopplerFactor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dopplerFactor.Location = new System.Drawing.Point(121, 133);
-            this.dopplerFactor.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.dopplerFactor.Name = "dopplerFactor";
-            this.dopplerFactor.Size = new System.Drawing.Size(112, 20);
-            this.dopplerFactor.TabIndex = 10;
-            // 
             // attenuationCurve
             // 
             this.attenuationCurve.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -210,16 +220,6 @@
             this.attenuationCurve.Name = "attenuationCurve";
             this.attenuationCurve.Size = new System.Drawing.Size(112, 21);
             this.attenuationCurve.TabIndex = 11;
-            // 
-            // unknownFlag
-            // 
-            this.unknownFlag.AutoSize = true;
-            this.unknownFlag.Location = new System.Drawing.Point(3, 159);
-            this.unknownFlag.Name = "unknownFlag";
-            this.unknownFlag.Size = new System.Drawing.Size(72, 17);
-            this.unknownFlag.TabIndex = 12;
-            this.unknownFlag.Text = "Unknown";
-            this.unknownFlag.UseVisualStyleBackColor = true;
             // 
             // okButton
             // 
@@ -247,8 +247,8 @@
             this.Text = "Sound 3d Editor";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.attenuationRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dopplerFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attenuationRate)).EndInit();
             this.ResumeLayout(false);
 
         }

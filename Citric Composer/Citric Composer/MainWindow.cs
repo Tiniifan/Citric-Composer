@@ -3085,9 +3085,14 @@ namespace Citric_Composer {
 
         public override void SarRename_Click(object sender, EventArgs e) {
             string h = Microsoft.VisualBasic.Interaction.InputBox("New Name", "Enter Name:", tree.SelectedNode.Text.Split(']')[1].Substring(1));
-            if (h != "") {
+
+            if (h != "") 
+            {
                 string node = tree.SelectedNode.Parent.Name;
-                if (node.Equals("stream")) {
+
+                Console.WriteLine(node);
+
+                if (node.Equals("streams")) {
                     File.Streams[tree.SelectedNode.Index].Name = h;
                 } else if (node.Equals("sequences")) {
                     File.Sequences[tree.SelectedNode.Index].Name = h;
@@ -3104,6 +3109,7 @@ namespace Citric_Composer {
                 } else if (node.Equals("groups")) {
                     File.Groups[tree.SelectedNode.Index].Name = h;
                 }
+
                 UpdateNodes();
             }
         }
@@ -3349,35 +3355,67 @@ namespace Citric_Composer {
             }
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Stream, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Stream, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
-
-                //New entry.
-                StreamEntry e = new StreamEntry() { Name = "STM_" + index, File = f, Player = File.Players[0], Sound3dInfo = new Sound3dInfo() };
-                File.Streams.Insert(index, e);
-
-                //Manage sound sets.
-                for (int i = 0; i < File.SoundSets.Count; i++) {
-                    if (File.SoundSets[i].StartIndex >= index && File.SoundSets[i].StartIndex != 0xFFFFFF) {
-                        File.SoundSets[i].StartIndex++;
+                else
+                {
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        files[i] = null;
                     }
-                    if (File.SoundSets[i].EndIndex >= index && File.SoundSets[i].EndIndex != 0xFFFFFF) {
-                        File.SoundSets[i].EndIndex++;
-                        if (File.SoundSets[i].EndIndex < 0) {
-                            File.SoundSets[i].EndIndex = 0;
+
+                    // Get the file name
+                    string fileName = "STM_" + index;
+                    if (!File.Streams.Any(x => x.Name == f.FileName))
+                    {
+                        fileName = f.FileName;
+                    }
+
+                    //New entry.
+                    StreamEntry e = new StreamEntry() { Name = fileName, File = f, Player = File.Players[0], Sound3dInfo = new Sound3dInfo() };
+                    File.Streams.Insert(index, e);
+
+                    //Manage sound sets.
+                    for (int j = 0; j < File.SoundSets.Count; j++)
+                    {
+                        if (File.SoundSets[j].StartIndex >= index && File.SoundSets[j].StartIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].StartIndex++;
+                        }
+                        if (File.SoundSets[j].EndIndex >= index && File.SoundSets[j].EndIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].EndIndex++;
+                            if (File.SoundSets[j].EndIndex < 0)
+                            {
+                                File.SoundSets[j].EndIndex = 0;
+                            }
                         }
                     }
+
+                    // Configure Sound no idea if it works for none L5 games
+                    //File.Streams[index].SetTrackFlag(0, true);
+                    //File.Streams[index].StreamFileType = StreamEntry.EStreamFileType.Binary;
+                    //File.Streams[index].AllocateChannelCount = 2;
+                    //File.Streams[index].Volume = 133;
+                    //File.Streams[index].UserParamsEnabled = new bool[] { true, false, false, false };
+                    //File.Streams[index].Sound3dInfo.Volume = false;
+                    //File.Streams[index].Sound3dInfo.Priority = false;
+                    //File.Streams[index].Sound3dInfo.Pan = false;
+                    //File.Streams[index].Sound3dInfo.Span = false;
+                    //File.Streams[index].Sound3dInfo.Filter = false;
+                    //File.Streams[index].Sound3dInfo.UnknownFlag = false;
+                    //File.Streams[index].Sound3dInfo.AttenuationCurve = Sound3dInfo.EAttenuationCurve.Linear;
                 }
-
             }
-
         }
 
         /// <summary>
@@ -3393,35 +3431,48 @@ namespace Citric_Composer {
             }
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.WaveSoundData, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.WaveSoundData, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
+                else
+                {
 
-                //New entry.
-                WaveSoundDataEntry e = new WaveSoundDataEntry() { Name = "WSD_" + index, File = f, Player = File.Players[0], ChannelPriority = 64, Sound3dInfo = new Sound3dInfo() };
-                File.WaveSoundDatas.Insert(index, e);
-
-                //Manage sound sets.
-                for (int i = 0; i < File.SoundSets.Count; i++) {
-                    if (File.SoundSets[i].StartIndex >= index && File.SoundSets[i].StartIndex != 0xFFFFFF) {
-                        File.SoundSets[i].StartIndex++;
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        f = null;
                     }
-                    if (File.SoundSets[i].EndIndex >= index && File.SoundSets[i].EndIndex != 0xFFFFFF) {
-                        File.SoundSets[i].EndIndex++;
-                        if (File.SoundSets[i].EndIndex < 0) {
-                            File.SoundSets[i].EndIndex = 0;
+
+                    //New entry.
+                    WaveSoundDataEntry e = new WaveSoundDataEntry() { Name = "WSD_" + index, File = f, Player = File.Players[0], ChannelPriority = 64, Sound3dInfo = new Sound3dInfo() };
+                    File.WaveSoundDatas.Insert(index, e);
+
+                    //Manage sound sets.
+                    for (int j = 0; j < File.SoundSets.Count; j++)
+                    {
+                        if (File.SoundSets[j].StartIndex >= index && File.SoundSets[j].StartIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].StartIndex++;
+                        }
+                        if (File.SoundSets[j].EndIndex >= index && File.SoundSets[j].EndIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].EndIndex++;
+                            if (File.SoundSets[j].EndIndex < 0)
+                            {
+                                File.SoundSets[j].EndIndex = 0;
+                            }
                         }
                     }
+
                 }
-
             }
-
         }
 
         /// <summary>
@@ -3437,35 +3488,48 @@ namespace Citric_Composer {
             }
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Sequence, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Sequence, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
+                else
+                {
 
-                //New entry.
-                SequenceEntry e = new SequenceEntry() { Name = "SEQ_" + index, File = f, Banks = new BankEntry[4], Player = File.Players[0], Sound3dInfo = new Sound3dInfo() };
-                File.Sequences.Insert(index, e);
-
-                //Manage sound sets.
-                for (int i = 0; i < File.SoundSets.Count; i++) {
-                    if (File.SoundSets[i].StartIndex >= index && File.SoundSets[i].StartIndex != 0xFFFFFF) {
-                        File.SoundSets[i].StartIndex++;
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        f = null;
                     }
-                    if (File.SoundSets[i].EndIndex >= index && File.SoundSets[i].EndIndex != 0xFFFFFF) {
-                        File.SoundSets[i].EndIndex++;
-                        if (File.SoundSets[i].EndIndex < 0) {
-                            File.SoundSets[i].EndIndex = 0;
+
+                    //New entry.
+                    SequenceEntry e = new SequenceEntry() { Name = "SEQ_" + index, File = f, Banks = new BankEntry[4], Player = File.Players[0], Sound3dInfo = new Sound3dInfo() };
+                    File.Sequences.Insert(index, e);
+
+                    //Manage sound sets.
+                    for (int j = 0; j < File.SoundSets.Count; j++)
+                    {
+                        if (File.SoundSets[j].StartIndex >= index && File.SoundSets[j].StartIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].StartIndex++;
+                        }
+                        if (File.SoundSets[j].EndIndex >= index && File.SoundSets[j].EndIndex != 0xFFFFFF)
+                        {
+                            File.SoundSets[j].EndIndex++;
+                            if (File.SoundSets[j].EndIndex < 0)
+                            {
+                                File.SoundSets[j].EndIndex = 0;
+                            }
                         }
                     }
+
                 }
-
             }
-
         }
 
         /// <summary>
@@ -3487,22 +3551,31 @@ namespace Citric_Composer {
         public void CreateBank(int index) {
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Bank, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Bank, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
+                else
+                {
 
-                //New entry.
-                BankEntry e = new BankEntry() { Name = "BANK_" + index, File = f, WaveArchives = new List<WaveArchiveEntry>() };
-                File.Banks.Insert(index, e);
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        f = null;
+                    }
 
+                    //New entry.
+                    BankEntry e = new BankEntry() { Name = "BANK_" + index, File = f, WaveArchives = new List<WaveArchiveEntry>() };
+                    File.Banks.Insert(index, e);
+
+                }
             }
-
         }
 
         /// <summary>
@@ -3512,22 +3585,31 @@ namespace Citric_Composer {
         public void CreateWaveArchive(int index) {
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.WaveArchive, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.WaveArchive, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
+                else
+                {
 
-                //New entry.
-                WaveArchiveEntry e = new WaveArchiveEntry() { Name = "WARC_" + index, IncludeWaveCount = false, LoadIndividually = false, File = f };
-                File.WaveArchives.Insert(index, e);
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        f = null;
+                    }
 
+                    //New entry.
+                    WaveArchiveEntry e = new WaveArchiveEntry() { Name = "WARC_" + index, IncludeWaveCount = false, LoadIndividually = false, File = f };
+                    File.WaveArchives.Insert(index, e);
+
+                }
             }
-
         }
 
         /// <summary>
@@ -3537,22 +3619,31 @@ namespace Citric_Composer {
         public void CreateGroup(int index) {
 
             //Get file.
-            SoundFile<ISoundFile> f = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Group, index - 1, FilePath);
-            if (f.FileId == -1) {
-                return;
-            } else {
+            List<SoundFile<ISoundFile>> files = FileWizard.GetInfo(File, SoundArchive.NewFileEntryType.Group, index - 1, FilePath);
 
-                //Null.
-                if (f.FileId == -2) {
-                    f = null;
+            for (int i = 0; i < files.Count; i++)
+            {
+                SoundFile<ISoundFile> f = files[i];
+
+                if (f.FileId == -1)
+                {
+                    return;
                 }
+                else
+                {
 
-                //New entry.
-                GroupEntry e = new GroupEntry() { Name = "GROUP_" + index, File = f };
-                File.Groups.Insert(index, e);
+                    //Null.
+                    if (f.FileId == -2)
+                    {
+                        f = null;
+                    }
 
+                    //New entry.
+                    GroupEntry e = new GroupEntry() { Name = "GROUP_" + index, File = f };
+                    File.Groups.Insert(index, e);
+
+                }
             }
-
         }
 
         /// <summary>

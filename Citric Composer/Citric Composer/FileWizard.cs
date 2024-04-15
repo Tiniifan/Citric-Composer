@@ -24,7 +24,7 @@ namespace Citric_Composer {
             InitializeComponent();
         }
 
-        public static SoundFile<ISoundFile> GetInfo(SoundArchive a, SoundArchive.NewFileEntryType type, int lastEntry, string filePath) {
+        public static List<SoundFile<ISoundFile>> GetInfo(SoundArchive a, SoundArchive.NewFileEntryType type, int lastEntry, string filePath) {
 
             //File wizard.
             FileWizard w = new FileWizard();
@@ -54,8 +54,9 @@ namespace Citric_Composer {
 
             //Return data.
             if (w.cancel) {
-                return new SoundFile<ISoundFile>() { FileId = -1 };
-            } else {
+                return new List<SoundFile<ISoundFile>>() { new SoundFile<ISoundFile>() { FileId = -1 } };
+            }
+            else {
 
                 //Get versions.
                 byte maj = 1;
@@ -64,16 +65,25 @@ namespace Citric_Composer {
 
                 //Use existing file.
                 if (w.useExistingFile.Checked) {
-                    return new SoundFile<ISoundFile>() { Reference = a.Files[w.existingFiles.SelectedIndex] };
+                    return new List<SoundFile<ISoundFile>>() { new SoundFile<ISoundFile>() { Reference = a.Files[w.existingFiles.SelectedIndex] } };
                 }
 
                 //Use new file.
                 else if (w.newFile.Checked) {
-                    if (w.referenceFileExternally.Checked) {
-                        return new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, null, false, GetRelativePath(w.newFilePath.Text, Path.GetDirectoryName(filePath))) };
-                    } else {
-                        return new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, SoundArchiveReader.ReadFile(File.ReadAllBytes(w.newFilePath.Text))) };
+                    List<SoundFile<ISoundFile>> sounds = new List<SoundFile<ISoundFile>>();
+
+                    foreach (string path in w.listBox1.Items)
+                    {
+                        if (w.referenceFileExternally.Checked)
+                        {
+                            sounds.Add(new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, null, false, GetRelativePath(path, Path.GetDirectoryName(filePath))), FileName = Path.GetFileNameWithoutExtension(path) });
+                        } else
+                        {
+                            sounds.Add(new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, SoundArchiveReader.ReadFile(File.ReadAllBytes(path))) });
+                        }
                     }
+
+                    return sounds;
                 }
 
                 //Blank file.
@@ -161,12 +171,12 @@ namespace Citric_Composer {
                             f = new WaveSoundData() { Version = new FileWriter.Version(maj, min, rev) };
                             break;
                     }
-                    return new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, f) };
+                    return new List<SoundFile<ISoundFile>>() { new SoundFile<ISoundFile>() { Reference = a.AddNewFile(type, lastEntry, f) } };
                 }
 
                 //Null file.
                 else {
-                    return new SoundFile<ISoundFile>() { FileId = -2 };
+                    return new List<SoundFile<ISoundFile>>() { new SoundFile<ISoundFile>() { FileId = -2 } };
                 }
 
             }
@@ -187,7 +197,7 @@ namespace Citric_Composer {
                 existingFiles.Enabled = false;
                 //referenceFileExternally.Enabled = true;
                 browse.Enabled = true;
-                if (newFilePath.Text == "") {
+                if (listBox1.Text == "") {
                     okButton.Enabled = false;
                 }
             }
@@ -214,6 +224,8 @@ namespace Citric_Composer {
             o.RestoreDirectory = true;
             o.Title = "Select New File";
             o.Filter = "All Files|*.*";
+            o.Multiselect = true;
+
             switch (type) {
                 case SoundArchive.NewFileEntryType.Bank:
                     o.Filter = "Bank|*.bfbnk;*.bcbnk";
@@ -237,9 +249,16 @@ namespace Citric_Composer {
                     o.Filter = "Wave Sound Data|*.bfwsd;*.bcwsd";
                     break;
             }
+
             o.ShowDialog();
-            if (o.FileName != "") {
-                newFilePath.Text = o.FileName;
+
+            if (o.FileNames.Length > 0)
+            {
+                foreach (string fileName in o.FileNames)
+                {
+                    listBox1.Items.Add(fileName);
+                }
+
                 okButton.Enabled = true;
             }
         }

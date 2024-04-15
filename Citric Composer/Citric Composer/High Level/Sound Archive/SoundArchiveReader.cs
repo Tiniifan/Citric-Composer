@@ -541,10 +541,14 @@ namespace CitraFileLoader {
 
                             //Count.
                             uint warCount = br.ReadUInt32();
+                            Console.WriteLine(warCount);
 
                             //Add each wave archive.
                             for (int j = 0; j < warCount; j++) {
-                                e.WaveArchives.Add(a.WaveArchives[(int)new Id(ref br).index]);
+                                if (warCount < a.WaveArchives.Count())
+                                {
+                                    e.WaveArchives.Add(a.WaveArchives[(int)new Id(ref br).index]);
+                                }
                             }
 
                         }

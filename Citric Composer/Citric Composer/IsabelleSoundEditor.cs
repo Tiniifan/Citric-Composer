@@ -159,9 +159,12 @@ namespace Citric_Composer
                 //Game stream.
                 case "fstm":
                 case "cstm":
-                    b_stm s = new b_stm();
-                    s.Load(File.ReadAllBytes(fileToOpen));
-                    file = new FISP(s);
+                    if (File.Exists(fileToOpen))
+                    {
+                        b_stm s = new b_stm();
+                        s.Load(File.ReadAllBytes(fileToOpen));
+                        file = new FISP(s);
+                    }
                     break;
 
                 //Project.
